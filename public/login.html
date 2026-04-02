@@ -5,16 +5,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-box">
-    <h2>Secure Access</h2>
-    <input id="uid" placeholder="Username">
-    <input id="upass" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
+
+<div class="login-box">
+  <h2>Secure Access</h2>
+  <input id="uid" placeholder="Username">
+  <input id="upass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
 
 <script>
 function login() {
-  if (uid.value.trim() === "@##%^@^@^%@%525@#$" && upass.value.trim() === "@##%^@^@^%@%525@#$") {
+  const u = document.getElementById("uid").value.trim();
+  const p = document.getElementById("upass").value.trim();
+
+  if (u === "@##%^@^@^%@%525@#$" && p === "@##%^@^@^%@%525@#$") {
     sessionStorage.setItem("auth","ok");
     location.href = "/launcher.html";
   } else {
@@ -22,5 +26,6 @@ function login() {
   }
 }
 </script>
+
 </body>
 </html>
